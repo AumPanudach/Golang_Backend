@@ -1,0 +1,19 @@
+
+### Get Transaction 
+GET http://localhost:8081/api/v2/transaction HTTP/1.1
+
+
+
+### Create Tranaction 
+POST http://localhost:8081/api/v2/transaction HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjM1NzEzMDMsImlkIjo0LCJsZXZlbCI6Im5vcm1hbCIsInVzZXJuYW1lIjoiYWRtaW4zIn0.h7d4L_oNiriFKtYmn2RTXVJ7LlEGCtKcAJMPx2tMcno
+Content-Type: application/json
+
+{
+  "total": 50.50,
+  "paid": 100,
+  "change": 49.50,
+  "payment_type": "cash",
+  "payment_detail": "full",
+  "order_list": "[]"  
+}

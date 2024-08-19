@@ -1,0 +1,109 @@
+
+### Get Product 
+GET http://localhost:8081/api/v2/product?token=1234 HTTP/1.1
+
+
+### Get Product with Token
+GET http://localhost:8081/api/v2/product HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjM1NTY0ODYsImlkIjo0LCJsZXZlbCI6Im5vcm1hbCIsInVzZXJuYW1lIjoiYWRtaW4zIn0.X_u39QtljuiystfwADLcuvHt_00BUAYv7qGnYq-7CtQ
+### Get Product with keyword
+GET http://localhost:8081/api/v2/product?keyword=te HTTP/1.1
+
+
+### Get Product by ID 
+GET http://localhost:8081/api/v2/product/3 HTTP/1.1
+
+
+
+### Create 
+POST http://localhost:8081/api/v2/product HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjM1NjE1NDYsImlkIjo0LCJsZXZlbCI6Im5vcm1hbCIsInVzZXJuYW1lIjoiYWRtaW4zIn0.rA4OF4JLyLkXySg3s0KE27xgz_IddUDea-aHvHq384U
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name";
+
+test
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="stock";
+
+300
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="price";
+
+180
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="test.jpg"
+Content-Type: image/png
+
+< ./test.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+### Edit 
+PUT http://localhost:8081/api/v2/product HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTk4OTg1OTQsImlkIjoxLCJsZXZlbCI6Im5vcm1hbCIsInVzZXJuYW1lIjoiYWRtaW4ifQ.e8ZcnQFnye_DldUnzyqfth37SVB0hp8ZEjvRCy7th4s
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="id";
+
+1
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name";
+
+Arduino board (Edit)
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="stock";
+
+101
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="price";
+
+200
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="test_2nd.jpg"
+Content-Type: image/png
+
+< ./test_2nd.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+
+---------------------------------------------
+### Heroku
+
+### Create 
+POST https://cmgostock.herokuapp.com/api/v2/product HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDExNzI5NTgsImlkIjo0LCJsZXZlbCI6Im5vcm1hbCIsInVzZXJuYW1lIjoiY20yIn0.Gjh80yfcwzR8nTtiD4tM0zTDb9CgemuGGJoLB5v0DF8
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name";
+
+Angular2 
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="stock";
+
+300
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="price";
+
+180
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="test.jpg"
+Content-Type: image/png
+
+## Test create product
+
+POST http://localhost:8081/api/v2/product HTTP/1.1
+Content-Type: multipart/form-data;
+{
+    "name" : "test",
+    "stock" : 1234,
+    "price" : 231
+}
+
+
+< ./test.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
