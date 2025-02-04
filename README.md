@@ -1,6 +1,4 @@
 # Golang_Backend
-# Golang Backend
-
 ## Project Description
 A brief description of what the project does and its purpose.
 
